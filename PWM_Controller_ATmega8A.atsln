@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "PWM_Controller_ATmega8A", "PWM_Controller_ATmega8A\PWM_Controller_ATmega8A.cproj", "{98DBFEFC-4C42-4E29-B853-FFB77A04822F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98DBFEFC-4C42-4E29-B853-FFB77A04822F}.Debug|AVR.ActiveCfg = Debug|AVR
+		{98DBFEFC-4C42-4E29-B853-FFB77A04822F}.Debug|AVR.Build.0 = Debug|AVR
+		{98DBFEFC-4C42-4E29-B853-FFB77A04822F}.Release|AVR.ActiveCfg = Release|AVR
+		{98DBFEFC-4C42-4E29-B853-FFB77A04822F}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

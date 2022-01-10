@@ -1,0 +1,1146 @@
+
+PWM_Controller_ATmega8A.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000006f4  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000002  00800060  000006f4  00000788  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          0000000d  00800062  00800062  0000078a  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  0000078a  2**0
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000050  00000000  00000000  000007ba  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   000004dc  00000000  00000000  0000080a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000001df  00000000  00000000  00000ce6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000002ce  00000000  00000000  00000ec5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  000000dc  00000000  00000000  00001194  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000234  00000000  00000000  00001270  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    0000036a  00000000  00000000  000014a4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000040  00000000  00000000  0000180e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	1d c0       	rjmp	.+58     	; 0x3c <__ctors_end>
+   2:	0f c2       	rjmp	.+1054   	; 0x422 <__vector_1>
+   4:	36 c0       	rjmp	.+108    	; 0x72 <__bad_interrupt>
+   6:	35 c0       	rjmp	.+106    	; 0x72 <__bad_interrupt>
+   8:	34 c0       	rjmp	.+104    	; 0x72 <__bad_interrupt>
+   a:	33 c0       	rjmp	.+102    	; 0x72 <__bad_interrupt>
+   c:	32 c0       	rjmp	.+100    	; 0x72 <__bad_interrupt>
+   e:	31 c0       	rjmp	.+98     	; 0x72 <__bad_interrupt>
+  10:	30 c0       	rjmp	.+96     	; 0x72 <__bad_interrupt>
+  12:	a7 c1       	rjmp	.+846    	; 0x362 <__vector_9>
+  14:	2e c0       	rjmp	.+92     	; 0x72 <__bad_interrupt>
+  16:	2d c0       	rjmp	.+90     	; 0x72 <__bad_interrupt>
+  18:	2c c0       	rjmp	.+88     	; 0x72 <__bad_interrupt>
+  1a:	2b c0       	rjmp	.+86     	; 0x72 <__bad_interrupt>
+  1c:	2a c0       	rjmp	.+84     	; 0x72 <__bad_interrupt>
+  1e:	29 c0       	rjmp	.+82     	; 0x72 <__bad_interrupt>
+  20:	28 c0       	rjmp	.+80     	; 0x72 <__bad_interrupt>
+  22:	27 c0       	rjmp	.+78     	; 0x72 <__bad_interrupt>
+  24:	26 c0       	rjmp	.+76     	; 0x72 <__bad_interrupt>
+  26:	2f c0       	rjmp	.+94     	; 0x86 <seg_char+0x12>
+  28:	38 c0       	rjmp	.+112    	; 0x9a <seg_char+0x26>
+  2a:	41 c0       	rjmp	.+130    	; 0xae <seg_char+0x3a>
+  2c:	49 c0       	rjmp	.+146    	; 0xc0 <seg_char+0x4c>
+  2e:	53 c0       	rjmp	.+166    	; 0xd6 <seg_char+0x62>
+  30:	5d c0       	rjmp	.+186    	; 0xec <seg_char+0x78>
+  32:	66 c0       	rjmp	.+204    	; 0x100 <seg_char+0x8c>
+  34:	6f c0       	rjmp	.+222    	; 0x114 <seg_char+0xa0>
+  36:	79 c0       	rjmp	.+242    	; 0x12a <seg_char+0xb6>
+  38:	82 c0       	rjmp	.+260    	; 0x13e <seg_char+0xca>
+  3a:	8b c0       	rjmp	.+278    	; 0x152 <seg_char+0xde>
+
+0000003c <__ctors_end>:
+  3c:	11 24       	eor	r1, r1
+  3e:	1f be       	out	0x3f, r1	; 63
+  40:	cf e5       	ldi	r28, 0x5F	; 95
+  42:	d4 e0       	ldi	r29, 0x04	; 4
+  44:	de bf       	out	0x3e, r29	; 62
+  46:	cd bf       	out	0x3d, r28	; 61
+
+00000048 <__do_copy_data>:
+  48:	10 e0       	ldi	r17, 0x00	; 0
+  4a:	a0 e6       	ldi	r26, 0x60	; 96
+  4c:	b0 e0       	ldi	r27, 0x00	; 0
+  4e:	e4 ef       	ldi	r30, 0xF4	; 244
+  50:	f6 e0       	ldi	r31, 0x06	; 6
+  52:	02 c0       	rjmp	.+4      	; 0x58 <__do_copy_data+0x10>
+  54:	05 90       	lpm	r0, Z+
+  56:	0d 92       	st	X+, r0
+  58:	a2 36       	cpi	r26, 0x62	; 98
+  5a:	b1 07       	cpc	r27, r17
+  5c:	d9 f7       	brne	.-10     	; 0x54 <__do_copy_data+0xc>
+
+0000005e <__do_clear_bss>:
+  5e:	20 e0       	ldi	r18, 0x00	; 0
+  60:	a2 e6       	ldi	r26, 0x62	; 98
+  62:	b0 e0       	ldi	r27, 0x00	; 0
+  64:	01 c0       	rjmp	.+2      	; 0x68 <.do_clear_bss_start>
+
+00000066 <.do_clear_bss_loop>:
+  66:	1d 92       	st	X+, r1
+
+00000068 <.do_clear_bss_start>:
+  68:	af 36       	cpi	r26, 0x6F	; 111
+  6a:	b2 07       	cpc	r27, r18
+  6c:	e1 f7       	brne	.-8      	; 0x66 <.do_clear_bss_loop>
+  6e:	38 d2       	rcall	.+1136   	; 0x4e0 <main>
+  70:	3f c3       	rjmp	.+1662   	; 0x6f0 <_exit>
+
+00000072 <__bad_interrupt>:
+  72:	c6 cf       	rjmp	.-116    	; 0x0 <__vectors>
+
+00000074 <seg_char>:
+	Проще говоря, надо нашу переменную (которую надо преобразовать) умножить на новый требуемый максимум и разделить на прежний максимум (если было 8 бит, то это 255).
+}
+*/
+
+void seg_char(uint8_t seg){		//Функция для вывода символов
+	switch (seg)
+  74:	90 e0       	ldi	r25, 0x00	; 0
+  76:	8b 30       	cpi	r24, 0x0B	; 11
+  78:	91 05       	cpc	r25, r1
+  7a:	08 f0       	brcs	.+2      	; 0x7e <seg_char+0xa>
+  7c:	6b c0       	rjmp	.+214    	; 0x154 <seg_char+0xe0>
+  7e:	fc 01       	movw	r30, r24
+  80:	ed 5e       	subi	r30, 0xED	; 237
+  82:	ff 4f       	sbci	r31, 0xFF	; 255
+  84:	09 94       	ijmp
+	{
+		case 0: PORTD &= ~(_BV(SegA) | _BV(SegD) | _BV(SegE)); PORTC &= ~(_BV(SegB) | _BV(SegC)); PORTC |= _BV(SegG); PORTB &= ~(_BV(SegF)); PORTC |= (_BV(DP));							//0
+  86:	82 b3       	in	r24, 0x12	; 18
+  88:	87 76       	andi	r24, 0x67	; 103
+  8a:	82 bb       	out	0x12, r24	; 18
+  8c:	85 b3       	in	r24, 0x15	; 21
+  8e:	85 7f       	andi	r24, 0xF5	; 245
+  90:	85 bb       	out	0x15, r24	; 21
+  92:	aa 9a       	sbi	0x15, 2	; 21
+  94:	c0 98       	cbi	0x18, 0	; 24
+  96:	ac 9a       	sbi	0x15, 4	; 21
+			break;
+  98:	08 95       	ret
+		case 1: PORTD |= (_BV(SegA) | _BV(SegD) | _BV(SegE)); PORTC &= ~(_BV(SegB) | _BV(SegC)); PORTC |= (_BV(SegG)); PORTB |= (_BV(SegF)); PORTC |= (_BV(DP));							//1
+  9a:	82 b3       	in	r24, 0x12	; 18
+  9c:	88 69       	ori	r24, 0x98	; 152
+  9e:	82 bb       	out	0x12, r24	; 18
+  a0:	85 b3       	in	r24, 0x15	; 21
+  a2:	85 7f       	andi	r24, 0xF5	; 245
+  a4:	85 bb       	out	0x15, r24	; 21
+  a6:	aa 9a       	sbi	0x15, 2	; 21
+  a8:	c0 9a       	sbi	0x18, 0	; 24
+  aa:	ac 9a       	sbi	0x15, 4	; 21
+			break;
+  ac:	08 95       	ret
+		case 2: PORTD &= ~(_BV(SegA) | _BV(SegD) | _BV(SegE)); PORTC &= ~(_BV(SegB)); PORTC |= (_BV(SegC)); PORTC &= ~(_BV(SegG)); PORTB |= (_BV(SegF)); PORTC |= (_BV(DP));				//2
+  ae:	82 b3       	in	r24, 0x12	; 18
+  b0:	87 76       	andi	r24, 0x67	; 103
+  b2:	82 bb       	out	0x12, r24	; 18
+  b4:	a9 98       	cbi	0x15, 1	; 21
+  b6:	ab 9a       	sbi	0x15, 3	; 21
+  b8:	aa 98       	cbi	0x15, 2	; 21
+  ba:	c0 9a       	sbi	0x18, 0	; 24
+  bc:	ac 9a       	sbi	0x15, 4	; 21
+			break;
+  be:	08 95       	ret
+		case 3: PORTD &= ~(_BV(SegA) | _BV(SegD)); PORTD |= (_BV(SegE)); PORTC &= ~(_BV(SegB) | _BV(SegC)); PORTC &= ~(_BV(SegG)); PORTB |= (_BV(SegF)); PORTC |= (_BV(DP));				//3
+  c0:	82 b3       	in	r24, 0x12	; 18
+  c2:	87 77       	andi	r24, 0x77	; 119
+  c4:	82 bb       	out	0x12, r24	; 18
+  c6:	94 9a       	sbi	0x12, 4	; 18
+  c8:	85 b3       	in	r24, 0x15	; 21
+  ca:	85 7f       	andi	r24, 0xF5	; 245
+  cc:	85 bb       	out	0x15, r24	; 21
+  ce:	aa 98       	cbi	0x15, 2	; 21
+  d0:	c0 9a       	sbi	0x18, 0	; 24
+  d2:	ac 9a       	sbi	0x15, 4	; 21
+			break;
+  d4:	08 95       	ret
+		case 4: PORTD |= (_BV(SegA) | _BV(SegD)); PORTD |= (_BV(SegE)); PORTC &= ~(_BV(SegB) | _BV(SegC)); PORTC &= ~(_BV(SegG)); PORTB &= ~(_BV(SegF)); PORTC |= (_BV(DP));				//4
+  d6:	82 b3       	in	r24, 0x12	; 18
+  d8:	88 68       	ori	r24, 0x88	; 136
+  da:	82 bb       	out	0x12, r24	; 18
+  dc:	94 9a       	sbi	0x12, 4	; 18
+  de:	85 b3       	in	r24, 0x15	; 21
+  e0:	85 7f       	andi	r24, 0xF5	; 245
+  e2:	85 bb       	out	0x15, r24	; 21
+  e4:	aa 98       	cbi	0x15, 2	; 21
+  e6:	c0 98       	cbi	0x18, 0	; 24
+  e8:	ac 9a       	sbi	0x15, 4	; 21
+			break;
+  ea:	08 95       	ret
+		case 5: PORTD &= ~(_BV(SegA) | _BV(SegD)); PORTD |= (_BV(SegE)); PORTC |= (_BV(SegB)); PORTC &= ~(_BV(SegC)); PORTC &= ~(_BV(SegG)); PORTB &= ~(_BV(SegF)); PORTC |= (_BV(DP));		//5
+  ec:	82 b3       	in	r24, 0x12	; 18
+  ee:	87 77       	andi	r24, 0x77	; 119
+  f0:	82 bb       	out	0x12, r24	; 18
+  f2:	94 9a       	sbi	0x12, 4	; 18
+  f4:	a9 9a       	sbi	0x15, 1	; 21
+  f6:	ab 98       	cbi	0x15, 3	; 21
+  f8:	aa 98       	cbi	0x15, 2	; 21
+  fa:	c0 98       	cbi	0x18, 0	; 24
+  fc:	ac 9a       	sbi	0x15, 4	; 21
+			break;
+  fe:	08 95       	ret
+		case 6: PORTD &= ~(_BV(SegA) | _BV(SegD)); PORTD &= ~(_BV(SegE)); PORTC |= (_BV(SegB)); PORTC &= ~(_BV(SegC)); PORTC &= ~(_BV(SegG)); PORTB &= ~(_BV(SegF)); PORTC |= (_BV(DP));	//6
+ 100:	82 b3       	in	r24, 0x12	; 18
+ 102:	87 77       	andi	r24, 0x77	; 119
+ 104:	82 bb       	out	0x12, r24	; 18
+ 106:	94 98       	cbi	0x12, 4	; 18
+ 108:	a9 9a       	sbi	0x15, 1	; 21
+ 10a:	ab 98       	cbi	0x15, 3	; 21
+ 10c:	aa 98       	cbi	0x15, 2	; 21
+ 10e:	c0 98       	cbi	0x18, 0	; 24
+ 110:	ac 9a       	sbi	0x15, 4	; 21
+			break;	
+ 112:	08 95       	ret
+		case 7: PORTD &= ~(_BV(SegA)); PORTD |= (_BV(SegD) | _BV(SegE)); PORTC &= ~(_BV(SegB) | _BV(SegC)); PORTC |= (_BV(SegG)); PORTB |= (_BV(SegF)); PORTC |= (_BV(DP));					//7
+ 114:	97 98       	cbi	0x12, 7	; 18
+ 116:	82 b3       	in	r24, 0x12	; 18
+ 118:	88 61       	ori	r24, 0x18	; 24
+ 11a:	82 bb       	out	0x12, r24	; 18
+ 11c:	85 b3       	in	r24, 0x15	; 21
+ 11e:	85 7f       	andi	r24, 0xF5	; 245
+ 120:	85 bb       	out	0x15, r24	; 21
+ 122:	aa 9a       	sbi	0x15, 2	; 21
+ 124:	c0 9a       	sbi	0x18, 0	; 24
+ 126:	ac 9a       	sbi	0x15, 4	; 21
+			break;
+ 128:	08 95       	ret
+		case 8: PORTD &= ~(_BV(SegA) | _BV(SegD)); PORTD &= ~(_BV(SegE)); PORTC &= ~(_BV(SegB)); PORTC &= ~(_BV(SegC)); PORTC &= ~(_BV(SegG)); PORTB &= ~(_BV(SegF)); PORTC |= (_BV(DP));	//8
+ 12a:	82 b3       	in	r24, 0x12	; 18
+ 12c:	87 77       	andi	r24, 0x77	; 119
+ 12e:	82 bb       	out	0x12, r24	; 18
+ 130:	94 98       	cbi	0x12, 4	; 18
+ 132:	a9 98       	cbi	0x15, 1	; 21
+ 134:	ab 98       	cbi	0x15, 3	; 21
+ 136:	aa 98       	cbi	0x15, 2	; 21
+ 138:	c0 98       	cbi	0x18, 0	; 24
+ 13a:	ac 9a       	sbi	0x15, 4	; 21
+			break;
+ 13c:	08 95       	ret
+		case 9: PORTD &= ~(_BV(SegA) | _BV(SegD)); PORTD |= (_BV(SegE)); PORTC &= ~(_BV(SegB)); PORTC &= ~(_BV(SegC)); PORTC &= ~(_BV(SegG)); PORTB &= ~(_BV(SegF)); PORTC |= (_BV(DP));	//9
+ 13e:	82 b3       	in	r24, 0x12	; 18
+ 140:	87 77       	andi	r24, 0x77	; 119
+ 142:	82 bb       	out	0x12, r24	; 18
+ 144:	94 9a       	sbi	0x12, 4	; 18
+ 146:	a9 98       	cbi	0x15, 1	; 21
+ 148:	ab 98       	cbi	0x15, 3	; 21
+ 14a:	aa 98       	cbi	0x15, 2	; 21
+ 14c:	c0 98       	cbi	0x18, 0	; 24
+ 14e:	ac 9a       	sbi	0x15, 4	; 21
+			break;
+ 150:	08 95       	ret
+		case 10: PORTC &= ~(_BV(DP));																																						//DP
+ 152:	ac 98       	cbi	0x15, 4	; 21
+ 154:	08 95       	ret
+
+00000156 <led_print>:
+			break;
+	}
+}
+
+void led_print(uint16_t number){	//Функция для разбивки числа на четыре индикаторы
+ 156:	ac 01       	movw	r20, r24
+	R1 = number/1000;				//Разряд тысяч 
+ 158:	9c 01       	movw	r18, r24
+ 15a:	36 95       	lsr	r19
+ 15c:	27 95       	ror	r18
+ 15e:	36 95       	lsr	r19
+ 160:	27 95       	ror	r18
+ 162:	36 95       	lsr	r19
+ 164:	27 95       	ror	r18
+ 166:	a5 ec       	ldi	r26, 0xC5	; 197
+ 168:	b0 e2       	ldi	r27, 0x20	; 32
+ 16a:	a2 d2       	rcall	.+1348   	; 0x6b0 <__umulhisi3>
+ 16c:	92 95       	swap	r25
+ 16e:	82 95       	swap	r24
+ 170:	8f 70       	andi	r24, 0x0F	; 15
+ 172:	89 27       	eor	r24, r25
+ 174:	9f 70       	andi	r25, 0x0F	; 15
+ 176:	89 27       	eor	r24, r25
+ 178:	80 93 6e 00 	sts	0x006E, r24
+	R2 = number%1000/100;			//Разряд сотен 
+ 17c:	68 ee       	ldi	r22, 0xE8	; 232
+ 17e:	73 e0       	ldi	r23, 0x03	; 3
+ 180:	86 9f       	mul	r24, r22
+ 182:	90 01       	movw	r18, r0
+ 184:	87 9f       	mul	r24, r23
+ 186:	30 0d       	add	r19, r0
+ 188:	96 9f       	mul	r25, r22
+ 18a:	30 0d       	add	r19, r0
+ 18c:	11 24       	eor	r1, r1
+ 18e:	42 1b       	sub	r20, r18
+ 190:	53 0b       	sbc	r21, r19
+ 192:	9a 01       	movw	r18, r20
+ 194:	36 95       	lsr	r19
+ 196:	27 95       	ror	r18
+ 198:	36 95       	lsr	r19
+ 19a:	27 95       	ror	r18
+ 19c:	ab e7       	ldi	r26, 0x7B	; 123
+ 19e:	b4 e1       	ldi	r27, 0x14	; 20
+ 1a0:	87 d2       	rcall	.+1294   	; 0x6b0 <__umulhisi3>
+ 1a2:	96 95       	lsr	r25
+ 1a4:	87 95       	ror	r24
+ 1a6:	80 93 6d 00 	sts	0x006D, r24
+	R3 = number%1000%100/10;		//Разряд десятков 
+ 1aa:	64 e6       	ldi	r22, 0x64	; 100
+ 1ac:	68 9f       	mul	r22, r24
+ 1ae:	90 01       	movw	r18, r0
+ 1b0:	69 9f       	mul	r22, r25
+ 1b2:	30 0d       	add	r19, r0
+ 1b4:	11 24       	eor	r1, r1
+ 1b6:	42 1b       	sub	r20, r18
+ 1b8:	53 0b       	sbc	r21, r19
+ 1ba:	9a 01       	movw	r18, r20
+ 1bc:	ad ec       	ldi	r26, 0xCD	; 205
+ 1be:	bc ec       	ldi	r27, 0xCC	; 204
+ 1c0:	77 d2       	rcall	.+1262   	; 0x6b0 <__umulhisi3>
+ 1c2:	96 95       	lsr	r25
+ 1c4:	87 95       	ror	r24
+ 1c6:	96 95       	lsr	r25
+ 1c8:	87 95       	ror	r24
+ 1ca:	96 95       	lsr	r25
+ 1cc:	87 95       	ror	r24
+ 1ce:	80 93 6c 00 	sts	0x006C, r24
+	R4 = number%1000%100%10;		//Разряд единиц 
+ 1d2:	9c 01       	movw	r18, r24
+ 1d4:	22 0f       	add	r18, r18
+ 1d6:	33 1f       	adc	r19, r19
+ 1d8:	88 0f       	add	r24, r24
+ 1da:	99 1f       	adc	r25, r25
+ 1dc:	88 0f       	add	r24, r24
+ 1de:	99 1f       	adc	r25, r25
+ 1e0:	88 0f       	add	r24, r24
+ 1e2:	99 1f       	adc	r25, r25
+ 1e4:	82 0f       	add	r24, r18
+ 1e6:	93 1f       	adc	r25, r19
+ 1e8:	48 1b       	sub	r20, r24
+ 1ea:	59 0b       	sbc	r21, r25
+ 1ec:	40 93 6b 00 	sts	0x006B, r20
+ 1f0:	08 95       	ret
+
+000001f2 <encoder>:
+}
+
+void encoder(){
+	static uint8_t new_state = 0;			//Новое состояние ножек энкодера
+	static uint8_t old_state = 0;			//Старое состояние ножек энкодера (значения хранятся в младших битах)
+	new_state = (PIND & 0b00000011);		//Читаем состояние битов, сдвигаем их в младшие разряды и присваиваем старому состоянию
+ 1f2:	20 b3       	in	r18, 0x10	; 16
+ 1f4:	23 70       	andi	r18, 0x03	; 3
+ 1f6:	20 93 63 00 	sts	0x0063, r18
+	switch (new_state << 2 | old_state)
+ 1fa:	82 2f       	mov	r24, r18
+ 1fc:	90 e0       	ldi	r25, 0x00	; 0
+ 1fe:	88 0f       	add	r24, r24
+ 200:	99 1f       	adc	r25, r25
+ 202:	88 0f       	add	r24, r24
+ 204:	99 1f       	adc	r25, r25
+ 206:	30 91 62 00 	lds	r19, 0x0062
+ 20a:	83 2b       	or	r24, r19
+ 20c:	81 30       	cpi	r24, 0x01	; 1
+ 20e:	91 05       	cpc	r25, r1
+ 210:	19 f0       	breq	.+6      	; 0x218 <encoder+0x26>
+ 212:	04 97       	sbiw	r24, 0x04	; 4
+ 214:	81 f1       	breq	.+96     	; 0x276 <encoder+0x84>
+ 216:	5d c0       	rjmp	.+186    	; 0x2d2 <encoder+0xe0>
+	{
+		case 0x01:  count++;						//Энкодер вправо
+ 218:	80 91 69 00 	lds	r24, 0x0069
+ 21c:	90 91 6a 00 	lds	r25, 0x006A
+ 220:	01 96       	adiw	r24, 0x01	; 1
+ 222:	90 93 6a 00 	sts	0x006A, r25
+ 226:	80 93 69 00 	sts	0x0069, r24
+		if (btn_state == 1) PWM5V++;				//Меняем скважность только в этом режиме
+ 22a:	80 91 61 00 	lds	r24, 0x0061
+ 22e:	81 30       	cpi	r24, 0x01	; 1
+ 230:	31 f4       	brne	.+12     	; 0x23e <encoder+0x4c>
+ 232:	80 91 68 00 	lds	r24, 0x0068
+ 236:	8f 5f       	subi	r24, 0xFF	; 255
+ 238:	80 93 68 00 	sts	0x0068, r24
+ 23c:	4a c0       	rjmp	.+148    	; 0x2d2 <encoder+0xe0>
+		else if(btn_state == 2) PWMGND++;			//Меняем скважность только в этом режиме
+ 23e:	82 30       	cpi	r24, 0x02	; 2
+ 240:	31 f4       	brne	.+12     	; 0x24e <encoder+0x5c>
+ 242:	80 91 67 00 	lds	r24, 0x0067
+ 246:	8f 5f       	subi	r24, 0xFF	; 255
+ 248:	80 93 67 00 	sts	0x0067, r24
+ 24c:	42 c0       	rjmp	.+132    	; 0x2d2 <encoder+0xe0>
+		else if(btn_state == 4) analog_current++;	//Меняем переменную для тока
+ 24e:	84 30       	cpi	r24, 0x04	; 4
+ 250:	31 f4       	brne	.+12     	; 0x25e <encoder+0x6c>
+ 252:	80 91 66 00 	lds	r24, 0x0066
+ 256:	8f 5f       	subi	r24, 0xFF	; 255
+ 258:	80 93 66 00 	sts	0x0066, r24
+ 25c:	3a c0       	rjmp	.+116    	; 0x2d2 <encoder+0xe0>
+		else if(btn_state == 5) analog_voltage++;	//Меняем переменную для напряжения
+ 25e:	85 30       	cpi	r24, 0x05	; 5
+ 260:	c1 f5       	brne	.+112    	; 0x2d2 <encoder+0xe0>
+ 262:	80 91 64 00 	lds	r24, 0x0064
+ 266:	90 91 65 00 	lds	r25, 0x0065
+ 26a:	01 96       	adiw	r24, 0x01	; 1
+ 26c:	90 93 65 00 	sts	0x0065, r25
+ 270:	80 93 64 00 	sts	0x0064, r24
+ 274:	2e c0       	rjmp	.+92     	; 0x2d2 <encoder+0xe0>
+		break;
+		
+		case 0x04:  count--;						//Энкодер влево
+ 276:	80 91 69 00 	lds	r24, 0x0069
+ 27a:	90 91 6a 00 	lds	r25, 0x006A
+ 27e:	01 97       	sbiw	r24, 0x01	; 1
+ 280:	90 93 6a 00 	sts	0x006A, r25
+ 284:	80 93 69 00 	sts	0x0069, r24
+		if (btn_state == 1) PWM5V--;
+ 288:	80 91 61 00 	lds	r24, 0x0061
+ 28c:	81 30       	cpi	r24, 0x01	; 1
+ 28e:	31 f4       	brne	.+12     	; 0x29c <encoder+0xaa>
+ 290:	80 91 68 00 	lds	r24, 0x0068
+ 294:	81 50       	subi	r24, 0x01	; 1
+ 296:	80 93 68 00 	sts	0x0068, r24
+ 29a:	1b c0       	rjmp	.+54     	; 0x2d2 <encoder+0xe0>
+		else if(btn_state == 2) PWMGND--;
+ 29c:	82 30       	cpi	r24, 0x02	; 2
+ 29e:	31 f4       	brne	.+12     	; 0x2ac <encoder+0xba>
+ 2a0:	80 91 67 00 	lds	r24, 0x0067
+ 2a4:	81 50       	subi	r24, 0x01	; 1
+ 2a6:	80 93 67 00 	sts	0x0067, r24
+ 2aa:	13 c0       	rjmp	.+38     	; 0x2d2 <encoder+0xe0>
+		else if(btn_state == 4) analog_current--;
+ 2ac:	84 30       	cpi	r24, 0x04	; 4
+ 2ae:	31 f4       	brne	.+12     	; 0x2bc <encoder+0xca>
+ 2b0:	80 91 66 00 	lds	r24, 0x0066
+ 2b4:	81 50       	subi	r24, 0x01	; 1
+ 2b6:	80 93 66 00 	sts	0x0066, r24
+ 2ba:	0b c0       	rjmp	.+22     	; 0x2d2 <encoder+0xe0>
+		else if(btn_state == 5) analog_voltage--;
+ 2bc:	85 30       	cpi	r24, 0x05	; 5
+ 2be:	49 f4       	brne	.+18     	; 0x2d2 <encoder+0xe0>
+ 2c0:	80 91 64 00 	lds	r24, 0x0064
+ 2c4:	90 91 65 00 	lds	r25, 0x0065
+ 2c8:	01 97       	sbiw	r24, 0x01	; 1
+ 2ca:	90 93 65 00 	sts	0x0065, r25
+ 2ce:	80 93 64 00 	sts	0x0064, r24
+		break;
+	}
+	
+	if(count > 255) count = 0;
+ 2d2:	80 91 69 00 	lds	r24, 0x0069
+ 2d6:	90 91 6a 00 	lds	r25, 0x006A
+ 2da:	8f 3f       	cpi	r24, 0xFF	; 255
+ 2dc:	91 05       	cpc	r25, r1
+ 2de:	29 f0       	breq	.+10     	; 0x2ea <encoder+0xf8>
+ 2e0:	24 f0       	brlt	.+8      	; 0x2ea <encoder+0xf8>
+ 2e2:	10 92 6a 00 	sts	0x006A, r1
+ 2e6:	10 92 69 00 	sts	0x0069, r1
+	if(count < 0) count = 255;
+ 2ea:	80 91 69 00 	lds	r24, 0x0069
+ 2ee:	90 91 6a 00 	lds	r25, 0x006A
+ 2f2:	99 23       	and	r25, r25
+ 2f4:	34 f4       	brge	.+12     	; 0x302 <encoder+0x110>
+ 2f6:	8f ef       	ldi	r24, 0xFF	; 255
+ 2f8:	90 e0       	ldi	r25, 0x00	; 0
+ 2fa:	90 93 6a 00 	sts	0x006A, r25
+ 2fe:	80 93 69 00 	sts	0x0069, r24
+	
+	if(PWM5V > 255) PWM5V = 0;
+ 302:	80 91 68 00 	lds	r24, 0x0068
+	if(PWM5V < 0) PWM5V = 255;
+ 306:	80 91 68 00 	lds	r24, 0x0068
+	
+	if(PWMGND > 255) PWMGND = 0;
+ 30a:	80 91 67 00 	lds	r24, 0x0067
+	if(PWMGND < 0) PWMGND = 255;
+ 30e:	80 91 67 00 	lds	r24, 0x0067
+	
+	if(analog_current > 21) analog_current = 21;
+ 312:	80 91 66 00 	lds	r24, 0x0066
+ 316:	86 31       	cpi	r24, 0x16	; 22
+ 318:	1c f0       	brlt	.+6      	; 0x320 <encoder+0x12e>
+ 31a:	85 e1       	ldi	r24, 0x15	; 21
+ 31c:	80 93 66 00 	sts	0x0066, r24
+	if(analog_current < 0) analog_current = 0;
+ 320:	80 91 66 00 	lds	r24, 0x0066
+ 324:	88 23       	and	r24, r24
+ 326:	14 f4       	brge	.+4      	; 0x32c <encoder+0x13a>
+ 328:	10 92 66 00 	sts	0x0066, r1
+	
+	if(analog_voltage > 255) analog_voltage = 255;
+ 32c:	80 91 64 00 	lds	r24, 0x0064
+ 330:	90 91 65 00 	lds	r25, 0x0065
+ 334:	8f 3f       	cpi	r24, 0xFF	; 255
+ 336:	91 05       	cpc	r25, r1
+ 338:	39 f0       	breq	.+14     	; 0x348 <encoder+0x156>
+ 33a:	34 f0       	brlt	.+12     	; 0x348 <encoder+0x156>
+ 33c:	8f ef       	ldi	r24, 0xFF	; 255
+ 33e:	90 e0       	ldi	r25, 0x00	; 0
+ 340:	90 93 65 00 	sts	0x0065, r25
+ 344:	80 93 64 00 	sts	0x0064, r24
+	if(analog_voltage < 0) analog_voltage = 0;
+ 348:	80 91 64 00 	lds	r24, 0x0064
+ 34c:	90 91 65 00 	lds	r25, 0x0065
+ 350:	99 23       	and	r25, r25
+ 352:	24 f4       	brge	.+8      	; 0x35c <encoder+0x16a>
+ 354:	10 92 65 00 	sts	0x0065, r1
+ 358:	10 92 64 00 	sts	0x0064, r1
+	
+	old_state = new_state;
+ 35c:	20 93 62 00 	sts	0x0062, r18
+ 360:	08 95       	ret
+
+00000362 <__vector_9>:
+}
+
+ISR(TIMER0_OVF_vect){		//Прерывание при переполеннии Таймера 0 для Динамической индикации
+ 362:	1f 92       	push	r1
+ 364:	0f 92       	push	r0
+ 366:	0f b6       	in	r0, 0x3f	; 63
+ 368:	0f 92       	push	r0
+ 36a:	11 24       	eor	r1, r1
+ 36c:	2f 93       	push	r18
+ 36e:	3f 93       	push	r19
+ 370:	4f 93       	push	r20
+ 372:	5f 93       	push	r21
+ 374:	6f 93       	push	r22
+ 376:	7f 93       	push	r23
+ 378:	8f 93       	push	r24
+ 37a:	9f 93       	push	r25
+ 37c:	af 93       	push	r26
+ 37e:	bf 93       	push	r27
+ 380:	ef 93       	push	r30
+ 382:	ff 93       	push	r31
+	
+	switch (indi){
+ 384:	80 91 60 00 	lds	r24, 0x0060
+ 388:	82 30       	cpi	r24, 0x02	; 2
+ 38a:	89 f0       	breq	.+34     	; 0x3ae <__vector_9+0x4c>
+ 38c:	18 f4       	brcc	.+6      	; 0x394 <__vector_9+0x32>
+ 38e:	81 30       	cpi	r24, 0x01	; 1
+ 390:	31 f0       	breq	.+12     	; 0x39e <__vector_9+0x3c>
+ 392:	2a c0       	rjmp	.+84     	; 0x3e8 <__vector_9+0x86>
+ 394:	83 30       	cpi	r24, 0x03	; 3
+ 396:	99 f0       	breq	.+38     	; 0x3be <__vector_9+0x5c>
+ 398:	84 30       	cpi	r24, 0x04	; 4
+ 39a:	f9 f0       	breq	.+62     	; 0x3da <__vector_9+0x78>
+ 39c:	25 c0       	rjmp	.+74     	; 0x3e8 <__vector_9+0x86>
+		case 1: PORTD &= ~(_BV(Dig1)); PORTD |= _BV(Dig2); PORTB |= _BV(Dig4); PORTC |= _BV(Dig3); seg_char(R1); //Включается первый индикатор, остальные выключены. На индикатор выводится число из старшего разряда.
+ 39e:	96 98       	cbi	0x12, 6	; 18
+ 3a0:	95 9a       	sbi	0x12, 5	; 18
+ 3a2:	c5 9a       	sbi	0x18, 5	; 24
+ 3a4:	a8 9a       	sbi	0x15, 0	; 21
+ 3a6:	80 91 6e 00 	lds	r24, 0x006E
+ 3aa:	64 de       	rcall	.-824    	; 0x74 <seg_char>
+		break;
+ 3ac:	1d c0       	rjmp	.+58     	; 0x3e8 <__vector_9+0x86>
+		case 2: PORTD |= _BV(Dig1); PORTD &= ~(_BV(Dig2)); PORTB |= _BV(Dig4); PORTC |= _BV(Dig3); seg_char(R2); 
+ 3ae:	96 9a       	sbi	0x12, 6	; 18
+ 3b0:	95 98       	cbi	0x12, 5	; 18
+ 3b2:	c5 9a       	sbi	0x18, 5	; 24
+ 3b4:	a8 9a       	sbi	0x15, 0	; 21
+ 3b6:	80 91 6d 00 	lds	r24, 0x006D
+ 3ba:	5c de       	rcall	.-840    	; 0x74 <seg_char>
+		break;
+ 3bc:	15 c0       	rjmp	.+42     	; 0x3e8 <__vector_9+0x86>
+		case 3: PORTD |= _BV(Dig1); PORTD |= _BV(Dig2); PORTB |= _BV(Dig4); PORTC &= ~(_BV(Dig3)); seg_char(R3); if(btn_state == 5) seg_char(10);
+ 3be:	96 9a       	sbi	0x12, 6	; 18
+ 3c0:	95 9a       	sbi	0x12, 5	; 18
+ 3c2:	c5 9a       	sbi	0x18, 5	; 24
+ 3c4:	a8 98       	cbi	0x15, 0	; 21
+ 3c6:	80 91 6c 00 	lds	r24, 0x006C
+ 3ca:	54 de       	rcall	.-856    	; 0x74 <seg_char>
+ 3cc:	80 91 61 00 	lds	r24, 0x0061
+ 3d0:	85 30       	cpi	r24, 0x05	; 5
+ 3d2:	51 f4       	brne	.+20     	; 0x3e8 <__vector_9+0x86>
+ 3d4:	8a e0       	ldi	r24, 0x0A	; 10
+ 3d6:	4e de       	rcall	.-868    	; 0x74 <seg_char>
+ 3d8:	07 c0       	rjmp	.+14     	; 0x3e8 <__vector_9+0x86>
+		break;
+		case 4: PORTD |= _BV(Dig1); PORTD |= _BV(Dig2); PORTB &= ~(_BV(Dig4)); PORTC |= _BV(Dig3); seg_char(R4); 
+ 3da:	96 9a       	sbi	0x12, 6	; 18
+ 3dc:	95 9a       	sbi	0x12, 5	; 18
+ 3de:	c5 98       	cbi	0x18, 5	; 24
+ 3e0:	a8 9a       	sbi	0x15, 0	; 21
+ 3e2:	80 91 6b 00 	lds	r24, 0x006B
+ 3e6:	46 de       	rcall	.-884    	; 0x74 <seg_char>
+		break;
+	}
+	indi++;
+ 3e8:	80 91 60 00 	lds	r24, 0x0060
+ 3ec:	8f 5f       	subi	r24, 0xFF	; 255
+ 3ee:	80 93 60 00 	sts	0x0060, r24
+	if(indi > 4) indi = 1;
+ 3f2:	80 91 60 00 	lds	r24, 0x0060
+ 3f6:	85 30       	cpi	r24, 0x05	; 5
+ 3f8:	18 f0       	brcs	.+6      	; 0x400 <__vector_9+0x9e>
+ 3fa:	81 e0       	ldi	r24, 0x01	; 1
+ 3fc:	80 93 60 00 	sts	0x0060, r24
+}
+ 400:	ff 91       	pop	r31
+ 402:	ef 91       	pop	r30
+ 404:	bf 91       	pop	r27
+ 406:	af 91       	pop	r26
+ 408:	9f 91       	pop	r25
+ 40a:	8f 91       	pop	r24
+ 40c:	7f 91       	pop	r23
+ 40e:	6f 91       	pop	r22
+ 410:	5f 91       	pop	r21
+ 412:	4f 91       	pop	r20
+ 414:	3f 91       	pop	r19
+ 416:	2f 91       	pop	r18
+ 418:	0f 90       	pop	r0
+ 41a:	0f be       	out	0x3f, r0	; 63
+ 41c:	0f 90       	pop	r0
+ 41e:	1f 90       	pop	r1
+ 420:	18 95       	reti
+
+00000422 <__vector_1>:
+
+ISR(INT0_vect){				//Обработка нажатия кнопки на пине внешнего прерывания INT0
+ 422:	1f 92       	push	r1
+ 424:	0f 92       	push	r0
+ 426:	0f b6       	in	r0, 0x3f	; 63
+ 428:	0f 92       	push	r0
+ 42a:	11 24       	eor	r1, r1
+ 42c:	8f 93       	push	r24
+	btn_state++;
+ 42e:	80 91 61 00 	lds	r24, 0x0061
+ 432:	8f 5f       	subi	r24, 0xFF	; 255
+	if (btn_state > 5) btn_state = 1;
+ 434:	86 30       	cpi	r24, 0x06	; 6
+ 436:	18 f4       	brcc	.+6      	; 0x43e <__vector_1+0x1c>
+	indi++;
+	if(indi > 4) indi = 1;
+}
+
+ISR(INT0_vect){				//Обработка нажатия кнопки на пине внешнего прерывания INT0
+	btn_state++;
+ 438:	80 93 61 00 	sts	0x0061, r24
+ 43c:	03 c0       	rjmp	.+6      	; 0x444 <__vector_1+0x22>
+	if (btn_state > 5) btn_state = 1;
+ 43e:	81 e0       	ldi	r24, 0x01	; 1
+ 440:	80 93 61 00 	sts	0x0061, r24
+}
+ 444:	8f 91       	pop	r24
+ 446:	0f 90       	pop	r0
+ 448:	0f be       	out	0x3f, r0	; 63
+ 44a:	0f 90       	pop	r0
+ 44c:	1f 90       	pop	r1
+ 44e:	18 95       	reti
+
+00000450 <setup>:
+
+void setup(void)
+{
+	//Настройка портов для индикаторов
+	DDRB |= _BV(SegF) | _BV(Dig4) | _BV(PWM_OC1A) | _BV(PWM_OC1B) | _BV(PWM_OC2);	//
+ 450:	87 b3       	in	r24, 0x17	; 23
+ 452:	8f 62       	ori	r24, 0x2F	; 47
+ 454:	87 bb       	out	0x17, r24	; 23
+	DDRC |= _BV(SegB) | _BV(SegC) | _BV(SegG) | _BV(DP) | _BV(Dig3);				//	Настройка на выход портов для индикаторов
+ 456:	84 b3       	in	r24, 0x14	; 20
+ 458:	8f 61       	ori	r24, 0x1F	; 31
+ 45a:	84 bb       	out	0x14, r24	; 20
+	DDRD |= _BV(SegA) | _BV(SegD) | _BV(SegE) | _BV(Dig1) | _BV(Dig2);				//
+ 45c:	81 b3       	in	r24, 0x11	; 17
+ 45e:	88 6f       	ori	r24, 0xF8	; 248
+ 460:	81 bb       	out	0x11, r24	; 17
+	
+	PORTB |= _BV(SegF) | _BV(Dig4);													//
+ 462:	88 b3       	in	r24, 0x18	; 24
+ 464:	81 62       	ori	r24, 0x21	; 33
+ 466:	88 bb       	out	0x18, r24	; 24
+	PORTC |= _BV(SegB) | _BV(SegC) | _BV(SegG) | _BV(DP) | _BV(Dig3);				//	Установка пинов в единицу для выключения сегментов, так как индикатор с общим анодом
+ 468:	85 b3       	in	r24, 0x15	; 21
+ 46a:	8f 61       	ori	r24, 0x1F	; 31
+ 46c:	85 bb       	out	0x15, r24	; 21
+	PORTD |= _BV(SegA) | _BV(SegD) | _BV(SegE) | _BV(Dig1) | _BV(Dig2);				//
+ 46e:	82 b3       	in	r24, 0x12	; 18
+ 470:	88 6f       	ori	r24, 0xF8	; 248
+ 472:	82 bb       	out	0x12, r24	; 18
+	
+	//Настройка портов для кнопки и энкодера
+	DDRD &= ~(_BV(But) | _BV(Encoder2) | _BV(Encoder1));							//	Настройка на вход
+ 474:	81 b3       	in	r24, 0x11	; 17
+ 476:	88 7f       	andi	r24, 0xF8	; 248
+ 478:	81 bb       	out	0x11, r24	; 17
+	PORTD &= ~(_BV(But) | _BV(Encoder2) | _BV(Encoder1));							//	Подтягивающие резисторы выключены, так как есть на плате
+ 47a:	82 b3       	in	r24, 0x12	; 18
+ 47c:	88 7f       	andi	r24, 0xF8	; 248
+ 47e:	82 bb       	out	0x12, r24	; 18
+	
+	//Настройка внешних прерываний на INT0 для кнопки
+	MCUCR |= (1 << ISC01);															//Прерывание срабатывает на спаде уровня
+ 480:	85 b7       	in	r24, 0x35	; 53
+ 482:	82 60       	ori	r24, 0x02	; 2
+ 484:	85 bf       	out	0x35, r24	; 53
+	GICR |= (1 << INT0);															//Включили прерывание на пине INT0
+ 486:	8b b7       	in	r24, 0x3b	; 59
+ 488:	80 64       	ori	r24, 0x40	; 64
+ 48a:	8b bf       	out	0x3b, r24	; 59
+	
+	//Настройка Таймера 0 для динамической индикации
+	TCCR0 |= (1 << CS02);															//Предделитель на 256 (при 16 МГц 16000000/256/256 = 244)
+ 48c:	83 b7       	in	r24, 0x33	; 51
+ 48e:	84 60       	ori	r24, 0x04	; 4
+ 490:	83 bf       	out	0x33, r24	; 51
+	TCNT0 = 0;																		//Обнуляем счётный регистр
+ 492:	12 be       	out	0x32, r1	; 50
+	TIMSK |= (1 << TOIE0);															//Прерывание при переполении
+ 494:	89 b7       	in	r24, 0x39	; 57
+ 496:	81 60       	ori	r24, 0x01	; 1
+ 498:	89 bf       	out	0x39, r24	; 57
+	
+	//Настройка Таймера 1 для ШИМ
+	TCCR1A |= (1 << WGM10);															//Настраиваем ШИМ (8 бит, с точной фазой)
+ 49a:	8f b5       	in	r24, 0x2f	; 47
+ 49c:	81 60       	ori	r24, 0x01	; 1
+ 49e:	8f bd       	out	0x2f, r24	; 47
+	TCCR1A |= (1 << COM1A1) | (1 << COM1B1);										//Вывод ШИМ на пины ОС1А(РВ1) и OCR1B(PB2)
+ 4a0:	8f b5       	in	r24, 0x2f	; 47
+ 4a2:	80 6a       	ori	r24, 0xA0	; 160
+ 4a4:	8f bd       	out	0x2f, r24	; 47
+	TCCR1B |= (1 << CS10) | (1 << CS11);											//Предделитель 64 (частота ШИМ при 16 МГц - 488 Гц)
+ 4a6:	8e b5       	in	r24, 0x2e	; 46
+ 4a8:	83 60       	ori	r24, 0x03	; 3
+ 4aa:	8e bd       	out	0x2e, r24	; 46
+	TCNT1 = 0;																		//Обнуляем счётный регистр
+ 4ac:	1d bc       	out	0x2d, r1	; 45
+ 4ae:	1c bc       	out	0x2c, r1	; 44
+	OCR1A = 0;	OCR1B = 0;															//Обнуляем регистры совпадения (значением в этих регистрах управляем скважностью)
+ 4b0:	1b bc       	out	0x2b, r1	; 43
+ 4b2:	1a bc       	out	0x2a, r1	; 42
+ 4b4:	19 bc       	out	0x29, r1	; 41
+ 4b6:	18 bc       	out	0x28, r1	; 40
+		
+	//Настройка Таймера 2
+	TCCR2 |=  (1 << CS22) | (1 << CS20);											//Предделитель на 128 (от него зависит частота ШИМ на ОС2)
+ 4b8:	85 b5       	in	r24, 0x25	; 37
+ 4ba:	85 60       	ori	r24, 0x05	; 5
+ 4bc:	85 bd       	out	0x25, r24	; 37
+	TCCR2 |= (1 << WGM20) | (1 << WGM21);											//Режим Fast PWM
+ 4be:	85 b5       	in	r24, 0x25	; 37
+ 4c0:	88 64       	ori	r24, 0x48	; 72
+ 4c2:	85 bd       	out	0x25, r24	; 37
+	TCCR2 |= (1 << COM21);															//На пине ОС2 неинверсный ШИМ
+ 4c4:	85 b5       	in	r24, 0x25	; 37
+ 4c6:	80 62       	ori	r24, 0x20	; 32
+ 4c8:	85 bd       	out	0x25, r24	; 37
+	TCNT2 = 0;																		//Обнуляем счётный регистр
+ 4ca:	14 bc       	out	0x24, r1	; 36
+		
+	//Настройка АЦП
+	//ADMUX |= (1 << REFS1) | (1 << REFS0);											//Выбираем источник опорного напряжения 5 Вольт
+	ADMUX |= ((1 << MUX2) | (1 << MUX1));											//Канал АЦП номер 6
+ 4cc:	87 b1       	in	r24, 0x07	; 7
+ 4ce:	86 60       	ori	r24, 0x06	; 6
+ 4d0:	87 b9       	out	0x07, r24	; 7
+	ADMUX &= ~(1 << ADLAR);															//Правостороннее выравнивание
+ 4d2:	3d 98       	cbi	0x07, 5	; 7
+	ADCSRA |= (1 << ADEN);															//Включаем АЦП
+ 4d4:	37 9a       	sbi	0x06, 7	; 6
+	ADCSRA |= (1 << ADPS2) | (1 << ADPS1) | (1 << ADPS0);							//Делитель 128, частота дискредитации 125 кГц при 16 МГц микроконтроллера
+ 4d6:	86 b1       	in	r24, 0x06	; 6
+ 4d8:	87 60       	ori	r24, 0x07	; 7
+ 4da:	86 b9       	out	0x06, r24	; 6
+	ADCSRA |= (1 << ADFR);															//АЦП постоянно измеряет напряжение
+ 4dc:	35 9a       	sbi	0x06, 5	; 6
+ 4de:	08 95       	ret
+
+000004e0 <main>:
+}
+
+int main(void)
+{
+	setup();								//Настройка портов и периферии
+ 4e0:	b7 df       	rcall	.-146    	; 0x450 <setup>
+	
+	sei();									//Разрешаем прерывания
+ 4e2:	78 94       	sei
+					if (ADCSRA & (1 << ADIF))		//...если вычисление АЦП готово
+					{
+						OCR1B = ADC;				//Приравниваем значение регистра измерения АЦП регистру сравнения таймера 1
+						ADCSRA |= (1 <<ADIF);		//Готовим АЦП к следующему измерению (поднимаем флаг)
+					}
+					led_print(PWMGND*100/1023);
+ 4e4:	0f 2e       	mov	r0, r31
+ 4e6:	f4 e6       	ldi	r31, 0x64	; 100
+ 4e8:	ff 2e       	mov	r15, r31
+ 4ea:	f0 2d       	mov	r31, r0
+ 4ec:	0f ef       	ldi	r16, 0xFF	; 255
+ 4ee:	13 e0       	ldi	r17, 0x03	; 3
+				led_print(btn_state);
+				_delay_ms(1000);
+				while(btn_state == 5)
+				{
+					OCR2 = analog_voltage;				//Энкодером выставляем значение ШИМ - напряжение
+					led_print(analog_voltage*100/255);
+ 4f0:	cf ef       	ldi	r28, 0xFF	; 255
+ 4f2:	d0 e0       	ldi	r29, 0x00	; 0
+	
+	sei();									//Разрешаем прерывания
+	
+    while(1)								//Цикл
+    {	
+		switch(btn_state)					//Режим работы зависит от нажатий кнопки, которая по внешнему прерыванию икрементирует переменную btn_state
+ 4f4:	80 91 61 00 	lds	r24, 0x0061
+ 4f8:	83 30       	cpi	r24, 0x03	; 3
+ 4fa:	09 f4       	brne	.+2      	; 0x4fe <main+0x1e>
+ 4fc:	56 c0       	rjmp	.+172    	; 0x5aa <main+0xca>
+ 4fe:	28 f4       	brcc	.+10     	; 0x50a <main+0x2a>
+ 500:	81 30       	cpi	r24, 0x01	; 1
+ 502:	51 f0       	breq	.+20     	; 0x518 <main+0x38>
+ 504:	82 30       	cpi	r24, 0x02	; 2
+ 506:	61 f1       	breq	.+88     	; 0x560 <main+0x80>
+ 508:	f7 cf       	rjmp	.-18     	; 0x4f8 <main+0x18>
+ 50a:	84 30       	cpi	r24, 0x04	; 4
+ 50c:	09 f4       	brne	.+2      	; 0x510 <main+0x30>
+ 50e:	74 c0       	rjmp	.+232    	; 0x5f8 <main+0x118>
+ 510:	85 30       	cpi	r24, 0x05	; 5
+ 512:	09 f4       	brne	.+2      	; 0x516 <main+0x36>
+ 514:	91 c0       	rjmp	.+290    	; 0x638 <main+0x158>
+ 516:	f0 cf       	rjmp	.-32     	; 0x4f8 <main+0x18>
+		{
+			//Режим управления ШИМом +5 Вольт от прибора
+			case 1: 
+				led_print(btn_state);
+ 518:	81 e0       	ldi	r24, 0x01	; 1
+ 51a:	90 e0       	ldi	r25, 0x00	; 0
+ 51c:	1c de       	rcall	.-968    	; 0x156 <led_print>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 51e:	2f ef       	ldi	r18, 0xFF	; 255
+ 520:	83 ed       	ldi	r24, 0xD3	; 211
+ 522:	90 e3       	ldi	r25, 0x30	; 48
+ 524:	21 50       	subi	r18, 0x01	; 1
+ 526:	80 40       	sbci	r24, 0x00	; 0
+ 528:	90 40       	sbci	r25, 0x00	; 0
+ 52a:	e1 f7       	brne	.-8      	; 0x524 <main+0x44>
+ 52c:	00 c0       	rjmp	.+0      	; 0x52e <main+0x4e>
+ 52e:	00 00       	nop
+				_delay_ms(1000);
+				while(btn_state == 1)
+ 530:	80 91 61 00 	lds	r24, 0x0061
+ 534:	81 30       	cpi	r24, 0x01	; 1
+ 536:	f1 f6       	brne	.-68     	; 0x4f4 <main+0x14>
+				{
+					OCR1A = PWM5V;				//Пишем в регистр сравнения значение переменной энкодера
+ 538:	80 91 68 00 	lds	r24, 0x0068
+ 53c:	90 e0       	ldi	r25, 0x00	; 0
+ 53e:	9b bd       	out	0x2b, r25	; 43
+ 540:	8a bd       	out	0x2a, r24	; 42
+					led_print(PWM5V*100/255);	//Выводим на дисплей значение переменной энкодера
+ 542:	80 91 68 00 	lds	r24, 0x0068
+ 546:	f8 9e       	mul	r15, r24
+ 548:	c0 01       	movw	r24, r0
+ 54a:	11 24       	eor	r1, r1
+ 54c:	be 01       	movw	r22, r28
+ 54e:	9d d0       	rcall	.+314    	; 0x68a <__divmodhi4>
+ 550:	cb 01       	movw	r24, r22
+ 552:	01 de       	rcall	.-1022   	; 0x156 <led_print>
+					encoder();
+ 554:	4e de       	rcall	.-868    	; 0x1f2 <encoder>
+		{
+			//Режим управления ШИМом +5 Вольт от прибора
+			case 1: 
+				led_print(btn_state);
+				_delay_ms(1000);
+				while(btn_state == 1)
+ 556:	80 91 61 00 	lds	r24, 0x0061
+ 55a:	81 30       	cpi	r24, 0x01	; 1
+ 55c:	69 f3       	breq	.-38     	; 0x538 <main+0x58>
+ 55e:	ca cf       	rjmp	.-108    	; 0x4f4 <main+0x14>
+				}
+				break;
+				
+			//Режим управления ШИМом, управляющим минусом. Минус нагрузки подключается к клемме ОС1В, минус источника питания к GND. Напряжение до 24 Вольт.
+			case 2: 
+				led_print(btn_state);
+ 560:	82 e0       	ldi	r24, 0x02	; 2
+ 562:	90 e0       	ldi	r25, 0x00	; 0
+ 564:	f8 dd       	rcall	.-1040   	; 0x156 <led_print>
+ 566:	2f ef       	ldi	r18, 0xFF	; 255
+ 568:	83 ed       	ldi	r24, 0xD3	; 211
+ 56a:	90 e3       	ldi	r25, 0x30	; 48
+ 56c:	21 50       	subi	r18, 0x01	; 1
+ 56e:	80 40       	sbci	r24, 0x00	; 0
+ 570:	90 40       	sbci	r25, 0x00	; 0
+ 572:	e1 f7       	brne	.-8      	; 0x56c <main+0x8c>
+ 574:	00 c0       	rjmp	.+0      	; 0x576 <main+0x96>
+ 576:	00 00       	nop
+				_delay_ms(1000);
+				while(btn_state == 2)
+ 578:	80 91 61 00 	lds	r24, 0x0061
+ 57c:	82 30       	cpi	r24, 0x02	; 2
+ 57e:	09 f0       	breq	.+2      	; 0x582 <main+0xa2>
+ 580:	b9 cf       	rjmp	.-142    	; 0x4f4 <main+0x14>
+				{
+					OCR1B = PWMGND;
+ 582:	80 91 67 00 	lds	r24, 0x0067
+ 586:	90 e0       	ldi	r25, 0x00	; 0
+ 588:	99 bd       	out	0x29, r25	; 41
+ 58a:	88 bd       	out	0x28, r24	; 40
+					led_print(PWMGND*100/255);
+ 58c:	80 91 67 00 	lds	r24, 0x0067
+ 590:	f8 9e       	mul	r15, r24
+ 592:	c0 01       	movw	r24, r0
+ 594:	11 24       	eor	r1, r1
+ 596:	be 01       	movw	r22, r28
+ 598:	78 d0       	rcall	.+240    	; 0x68a <__divmodhi4>
+ 59a:	cb 01       	movw	r24, r22
+ 59c:	dc dd       	rcall	.-1096   	; 0x156 <led_print>
+					encoder();
+ 59e:	29 de       	rcall	.-942    	; 0x1f2 <encoder>
+				
+			//Режим управления ШИМом, управляющим минусом. Минус нагрузки подключается к клемме ОС1В, минус источника питания к GND. Напряжение до 24 Вольт.
+			case 2: 
+				led_print(btn_state);
+				_delay_ms(1000);
+				while(btn_state == 2)
+ 5a0:	80 91 61 00 	lds	r24, 0x0061
+ 5a4:	82 30       	cpi	r24, 0x02	; 2
+ 5a6:	69 f3       	breq	.-38     	; 0x582 <main+0xa2>
+ 5a8:	a5 cf       	rjmp	.-182    	; 0x4f4 <main+0x14>
+				}
+				break;
+				
+			//Режим управления любым ШИМом от внешнего аналогового сигнала 0-10 Вольт. (Надо повозиться ещё!!!....)
+			case 3: 
+				led_print(btn_state);
+ 5aa:	83 e0       	ldi	r24, 0x03	; 3
+ 5ac:	90 e0       	ldi	r25, 0x00	; 0
+ 5ae:	d3 dd       	rcall	.-1114   	; 0x156 <led_print>
+ 5b0:	2f ef       	ldi	r18, 0xFF	; 255
+ 5b2:	83 ed       	ldi	r24, 0xD3	; 211
+ 5b4:	90 e3       	ldi	r25, 0x30	; 48
+ 5b6:	21 50       	subi	r18, 0x01	; 1
+ 5b8:	80 40       	sbci	r24, 0x00	; 0
+ 5ba:	90 40       	sbci	r25, 0x00	; 0
+ 5bc:	e1 f7       	brne	.-8      	; 0x5b6 <main+0xd6>
+ 5be:	00 c0       	rjmp	.+0      	; 0x5c0 <main+0xe0>
+ 5c0:	00 00       	nop
+				_delay_ms(1000);
+				while(btn_state == 3)
+ 5c2:	80 91 61 00 	lds	r24, 0x0061
+ 5c6:	83 30       	cpi	r24, 0x03	; 3
+ 5c8:	09 f0       	breq	.+2      	; 0x5cc <main+0xec>
+ 5ca:	94 cf       	rjmp	.-216    	; 0x4f4 <main+0x14>
+				{
+					ADCSRA |= (1 << ADSC);			//Запускаем измерение
+ 5cc:	36 9a       	sbi	0x06, 6	; 6
+					if (ADCSRA & (1 << ADIF))		//...если вычисление АЦП готово
+ 5ce:	34 9b       	sbis	0x06, 4	; 6
+ 5d0:	05 c0       	rjmp	.+10     	; 0x5dc <main+0xfc>
+					{
+						OCR1B = ADC;				//Приравниваем значение регистра измерения АЦП регистру сравнения таймера 1
+ 5d2:	84 b1       	in	r24, 0x04	; 4
+ 5d4:	95 b1       	in	r25, 0x05	; 5
+ 5d6:	99 bd       	out	0x29, r25	; 41
+ 5d8:	88 bd       	out	0x28, r24	; 40
+						ADCSRA |= (1 <<ADIF);		//Готовим АЦП к следующему измерению (поднимаем флаг)
+ 5da:	34 9a       	sbi	0x06, 4	; 6
+					}
+					led_print(PWMGND*100/1023);
+ 5dc:	80 91 67 00 	lds	r24, 0x0067
+ 5e0:	f8 9e       	mul	r15, r24
+ 5e2:	c0 01       	movw	r24, r0
+ 5e4:	11 24       	eor	r1, r1
+ 5e6:	b8 01       	movw	r22, r16
+ 5e8:	50 d0       	rcall	.+160    	; 0x68a <__divmodhi4>
+ 5ea:	cb 01       	movw	r24, r22
+ 5ec:	b4 dd       	rcall	.-1176   	; 0x156 <led_print>
+				
+			//Режим управления любым ШИМом от внешнего аналогового сигнала 0-10 Вольт. (Надо повозиться ещё!!!....)
+			case 3: 
+				led_print(btn_state);
+				_delay_ms(1000);
+				while(btn_state == 3)
+ 5ee:	80 91 61 00 	lds	r24, 0x0061
+ 5f2:	83 30       	cpi	r24, 0x03	; 3
+ 5f4:	59 f3       	breq	.-42     	; 0x5cc <main+0xec>
+ 5f6:	7e cf       	rjmp	.-260    	; 0x4f4 <main+0x14>
+				}
+				break;
+				
+			//Режим тока 0-20 или 4-20 мА
+			case 4: 
+				led_print(btn_state);
+ 5f8:	84 e0       	ldi	r24, 0x04	; 4
+ 5fa:	90 e0       	ldi	r25, 0x00	; 0
+ 5fc:	ac dd       	rcall	.-1192   	; 0x156 <led_print>
+ 5fe:	2f ef       	ldi	r18, 0xFF	; 255
+ 600:	83 ed       	ldi	r24, 0xD3	; 211
+ 602:	90 e3       	ldi	r25, 0x30	; 48
+ 604:	21 50       	subi	r18, 0x01	; 1
+ 606:	80 40       	sbci	r24, 0x00	; 0
+ 608:	90 40       	sbci	r25, 0x00	; 0
+ 60a:	e1 f7       	brne	.-8      	; 0x604 <main+0x124>
+ 60c:	00 c0       	rjmp	.+0      	; 0x60e <main+0x12e>
+ 60e:	00 00       	nop
+				_delay_ms(1000);
+				while(btn_state == 4)
+ 610:	80 91 61 00 	lds	r24, 0x0061
+ 614:	84 30       	cpi	r24, 0x04	; 4
+ 616:	09 f0       	breq	.+2      	; 0x61a <main+0x13a>
+ 618:	6d cf       	rjmp	.-294    	; 0x4f4 <main+0x14>
+				{
+					OCR2 = analog_current;				//Энкодером выставляем значение ШИМ - ток
+ 61a:	80 91 66 00 	lds	r24, 0x0066
+ 61e:	83 bd       	out	0x23, r24	; 35
+					led_print(analog_current);
+ 620:	80 91 66 00 	lds	r24, 0x0066
+ 624:	99 27       	eor	r25, r25
+ 626:	87 fd       	sbrc	r24, 7
+ 628:	90 95       	com	r25
+ 62a:	95 dd       	rcall	.-1238   	; 0x156 <led_print>
+					encoder();
+ 62c:	e2 dd       	rcall	.-1084   	; 0x1f2 <encoder>
+				
+			//Режим тока 0-20 или 4-20 мА
+			case 4: 
+				led_print(btn_state);
+				_delay_ms(1000);
+				while(btn_state == 4)
+ 62e:	80 91 61 00 	lds	r24, 0x0061
+ 632:	84 30       	cpi	r24, 0x04	; 4
+ 634:	91 f3       	breq	.-28     	; 0x61a <main+0x13a>
+ 636:	5e cf       	rjmp	.-324    	; 0x4f4 <main+0x14>
+				}
+				break;
+				
+			//Режим напряжения 0-10 Вольт
+			case 5: 
+				led_print(btn_state);
+ 638:	85 e0       	ldi	r24, 0x05	; 5
+ 63a:	90 e0       	ldi	r25, 0x00	; 0
+ 63c:	8c dd       	rcall	.-1256   	; 0x156 <led_print>
+ 63e:	2f ef       	ldi	r18, 0xFF	; 255
+ 640:	83 ed       	ldi	r24, 0xD3	; 211
+ 642:	90 e3       	ldi	r25, 0x30	; 48
+ 644:	21 50       	subi	r18, 0x01	; 1
+ 646:	80 40       	sbci	r24, 0x00	; 0
+ 648:	90 40       	sbci	r25, 0x00	; 0
+ 64a:	e1 f7       	brne	.-8      	; 0x644 <main+0x164>
+ 64c:	00 c0       	rjmp	.+0      	; 0x64e <main+0x16e>
+ 64e:	00 00       	nop
+				_delay_ms(1000);
+				while(btn_state == 5)
+ 650:	80 91 61 00 	lds	r24, 0x0061
+ 654:	85 30       	cpi	r24, 0x05	; 5
+ 656:	09 f0       	breq	.+2      	; 0x65a <main+0x17a>
+ 658:	4d cf       	rjmp	.-358    	; 0x4f4 <main+0x14>
+				{
+					OCR2 = analog_voltage;				//Энкодером выставляем значение ШИМ - напряжение
+ 65a:	80 91 64 00 	lds	r24, 0x0064
+ 65e:	90 91 65 00 	lds	r25, 0x0065
+ 662:	83 bd       	out	0x23, r24	; 35
+					led_print(analog_voltage*100/255);
+ 664:	20 91 64 00 	lds	r18, 0x0064
+ 668:	30 91 65 00 	lds	r19, 0x0065
+ 66c:	f2 9e       	mul	r15, r18
+ 66e:	c0 01       	movw	r24, r0
+ 670:	f3 9e       	mul	r15, r19
+ 672:	90 0d       	add	r25, r0
+ 674:	11 24       	eor	r1, r1
+ 676:	be 01       	movw	r22, r28
+ 678:	08 d0       	rcall	.+16     	; 0x68a <__divmodhi4>
+ 67a:	cb 01       	movw	r24, r22
+ 67c:	6c dd       	rcall	.-1320   	; 0x156 <led_print>
+					encoder();
+ 67e:	b9 dd       	rcall	.-1166   	; 0x1f2 <encoder>
+				
+			//Режим напряжения 0-10 Вольт
+			case 5: 
+				led_print(btn_state);
+				_delay_ms(1000);
+				while(btn_state == 5)
+ 680:	80 91 61 00 	lds	r24, 0x0061
+ 684:	85 30       	cpi	r24, 0x05	; 5
+ 686:	49 f3       	breq	.-46     	; 0x65a <main+0x17a>
+ 688:	35 cf       	rjmp	.-406    	; 0x4f4 <main+0x14>
+
+0000068a <__divmodhi4>:
+ 68a:	97 fb       	bst	r25, 7
+ 68c:	07 2e       	mov	r0, r23
+ 68e:	16 f4       	brtc	.+4      	; 0x694 <__divmodhi4+0xa>
+ 690:	00 94       	com	r0
+ 692:	06 d0       	rcall	.+12     	; 0x6a0 <__divmodhi4_neg1>
+ 694:	77 fd       	sbrc	r23, 7
+ 696:	08 d0       	rcall	.+16     	; 0x6a8 <__divmodhi4_neg2>
+ 698:	17 d0       	rcall	.+46     	; 0x6c8 <__udivmodhi4>
+ 69a:	07 fc       	sbrc	r0, 7
+ 69c:	05 d0       	rcall	.+10     	; 0x6a8 <__divmodhi4_neg2>
+ 69e:	3e f4       	brtc	.+14     	; 0x6ae <__divmodhi4_exit>
+
+000006a0 <__divmodhi4_neg1>:
+ 6a0:	90 95       	com	r25
+ 6a2:	81 95       	neg	r24
+ 6a4:	9f 4f       	sbci	r25, 0xFF	; 255
+ 6a6:	08 95       	ret
+
+000006a8 <__divmodhi4_neg2>:
+ 6a8:	70 95       	com	r23
+ 6aa:	61 95       	neg	r22
+ 6ac:	7f 4f       	sbci	r23, 0xFF	; 255
+
+000006ae <__divmodhi4_exit>:
+ 6ae:	08 95       	ret
+
+000006b0 <__umulhisi3>:
+ 6b0:	a2 9f       	mul	r26, r18
+ 6b2:	b0 01       	movw	r22, r0
+ 6b4:	b3 9f       	mul	r27, r19
+ 6b6:	c0 01       	movw	r24, r0
+ 6b8:	a3 9f       	mul	r26, r19
+ 6ba:	01 d0       	rcall	.+2      	; 0x6be <__umulhisi3+0xe>
+ 6bc:	b2 9f       	mul	r27, r18
+ 6be:	70 0d       	add	r23, r0
+ 6c0:	81 1d       	adc	r24, r1
+ 6c2:	11 24       	eor	r1, r1
+ 6c4:	91 1d       	adc	r25, r1
+ 6c6:	08 95       	ret
+
+000006c8 <__udivmodhi4>:
+ 6c8:	aa 1b       	sub	r26, r26
+ 6ca:	bb 1b       	sub	r27, r27
+ 6cc:	51 e1       	ldi	r21, 0x11	; 17
+ 6ce:	07 c0       	rjmp	.+14     	; 0x6de <__udivmodhi4_ep>
+
+000006d0 <__udivmodhi4_loop>:
+ 6d0:	aa 1f       	adc	r26, r26
+ 6d2:	bb 1f       	adc	r27, r27
+ 6d4:	a6 17       	cp	r26, r22
+ 6d6:	b7 07       	cpc	r27, r23
+ 6d8:	10 f0       	brcs	.+4      	; 0x6de <__udivmodhi4_ep>
+ 6da:	a6 1b       	sub	r26, r22
+ 6dc:	b7 0b       	sbc	r27, r23
+
+000006de <__udivmodhi4_ep>:
+ 6de:	88 1f       	adc	r24, r24
+ 6e0:	99 1f       	adc	r25, r25
+ 6e2:	5a 95       	dec	r21
+ 6e4:	a9 f7       	brne	.-22     	; 0x6d0 <__udivmodhi4_loop>
+ 6e6:	80 95       	com	r24
+ 6e8:	90 95       	com	r25
+ 6ea:	bc 01       	movw	r22, r24
+ 6ec:	cd 01       	movw	r24, r26
+ 6ee:	08 95       	ret
+
+000006f0 <_exit>:
+ 6f0:	f8 94       	cli
+
+000006f2 <__stop_program>:
+ 6f2:	ff cf       	rjmp	.-2      	; 0x6f2 <__stop_program>
